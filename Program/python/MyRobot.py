@@ -153,7 +153,7 @@ class MyRobot():
     
     
     @staticmethod
-    def gaol_position(color):
+    def goal_position(color):
         if color=="orange":
             x=150
             y=110
@@ -179,7 +179,7 @@ class MyRobot():
         target_z=17
         print("target_x","target_y","target_z")
         print(target_x,target_y,target_z)
-        gaol_x,gaol_y,gaol_z=self.gaol_position(mission[2])
+        goal_x,goal_y,goal_z=self.goal_position(mission[2])
         theta1,theta2,theta3=self.IK_left_elbow_up(target_x,target_y,target_z)
         print("grab")
         print(theta1,theta2,theta3)
@@ -199,10 +199,10 @@ class MyRobot():
         self.board.digital[self.servo4pin].write(70)
         time.sleep(1)
         
-        print("gaol_x","gaol_y","gaol_z")
-        print(gaol_x,gaol_y,gaol_z)
+        print("goal_x","goal_y","goal_z")
+        print(goal_x,goal_y,goal_z)
         
-        theta1,theta2,theta3=self.IK_left_elbow_up(gaol_x,gaol_y,gaol_z)
+        theta1,theta2,theta3=self.IK_left_elbow_up(goal_x,goal_y,goal_z)
         
         self.board.digital[self.servo1pin].write(theta1)
         self.board.digital[self.servo2pin].write(theta2)
